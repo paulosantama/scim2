@@ -316,7 +316,7 @@ public class JsonUtils
     protected void updateNode(final ObjectNode parent, final String key,
                               final JsonNode value)
     {
-      if(value.isNull() || value.isArray() && value.size() == 0)
+      if(value == null || value.isNull() || value.isArray() && value.size() == 0)
       {
         // draft-ietf-scim-core-schema section 2.4 states "Unassigned
         // attributes, the null value, or empty array (in the case of
