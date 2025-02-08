@@ -61,11 +61,11 @@ public class PatchRequestTest
 
     // The first parameter of the method should not accept null.
     assertThrows(NullPointerException.class,
-            () -> new PatchRequest(null, PatchOperation.remove("invalid")));
+            () -> new PatchRequest(null, PatchOperation.remove("invalid", TextNode.valueOf("value"))));
 
     // Null arguments in the varargs method should be ignored.
     PatchRequest singleOperation = new PatchRequest(
-            PatchOperation.remove("password"), null, null
+            PatchOperation.remove("password", TextNode.valueOf("value")), null, null
     );
     assertEquals(singleOperation.getOperations().size(), 1);
   }
