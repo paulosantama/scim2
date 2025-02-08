@@ -79,7 +79,7 @@ public class DiffTestCase
     assertEquals(d.size(), 2);
 
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("title"))));
+        Path.root().attribute("title"), null)));
     ObjectNode replaceValue = JsonUtils.getJsonNodeFactory().objectNode();
     replaceValue.put("userType", "manager");
     replaceValue.put("nickName","bjj3");
@@ -158,7 +158,7 @@ public class DiffTestCase
     d = JsonUtils.diff(source, target, false);
     assertEquals(d.size(), 1);
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("name"))));
+        Path.root().attribute("name"), null)));
 
     d2 = JsonUtils.diff(source, target, true);
     for(PatchOperation op : d2)
@@ -178,7 +178,7 @@ public class DiffTestCase
     d = JsonUtils.diff(source, target, false);
     assertEquals(d.size(), 1);
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("name").attribute("honorificSuffix"))));
+        Path.root().attribute("name").attribute("honorificSuffix"), null)));
 
     d2 = JsonUtils.diff(source, target, true);
     for(PatchOperation op : d2)
@@ -284,10 +284,9 @@ public class DiffTestCase
     List<PatchOperation> d = JsonUtils.diff(source, target, false);
     assertEquals(d.size(), 4);
 
-    assertTrue(d.contains(PatchOperation.remove(Path.root().attribute("ims"))));
-    assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("photos",
-            Filter.eq("value", thumbnail)))));
+    assertTrue(d.contains(PatchOperation.remove(Path.root().attribute("ims"), null)));
+    assertTrue(d.contains(PatchOperation.remove(Path.root().attribute("photos",
+            Filter.eq("value", thumbnail)), null)));
     ObjectNode replaceValue = JsonUtils.getJsonNodeFactory().objectNode();
     replaceValue.putArray("entitlements").add(entitlement3);
     replaceValue.putArray("phones").add(phone1).add(phone2);
@@ -458,13 +457,13 @@ public class DiffTestCase
     List<PatchOperation> d = JsonUtils.diff(source, target, false);
     assertEquals(d.size(), 7);
 
-    assertTrue(d.contains(PatchOperation.remove(Path.root().attribute("ims"))));
+    assertTrue(d.contains(PatchOperation.remove(Path.root().attribute("ims"), null)));
     assertTrue(d.contains(PatchOperation.remove(
         Path.root().attribute("photos",
             Filter.fromString("value eq \"http://photo6\" and " +
                 "display eq \"Photo 6\" and " +
                 "type eq \"photo6\" and " +
-                "primary eq false")).attribute("display"))));
+                "primary eq false")).attribute("display"), null)));
     assertTrue(d.contains(PatchOperation.replace(
         Path.root().attribute("photos",
             Filter.fromString("value eq \"http://photo4\" and " +
@@ -482,7 +481,7 @@ public class DiffTestCase
         Path.root().attribute("photos",
             Filter.fromString("value eq \"http://thumbnail1\" and " +
                 "type eq \"thumbnail\" and " +
-                "primary eq true")))));
+                "primary eq true")), null)));
     ObjectNode replaceValue = JsonUtils.getJsonNodeFactory().objectNode();
     replaceValue.putArray("entitlements").add(entitlement3);
     replaceValue.putArray("phones").add(phone1).add(phone2);
@@ -684,13 +683,13 @@ public class DiffTestCase
     List<PatchOperation> d = JsonUtils.diff(source, target, false);
     assertEquals(d.size(), 4);
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("userName"))));
+        Path.root().attribute("userName"), null)));
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("nickName"))));
+        Path.root().attribute("nickName"), null)));
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("title"))));
+        Path.root().attribute("title"), null)));
     assertTrue(d.contains(PatchOperation.remove(
-        Path.root().attribute("userType"))));
+        Path.root().attribute("userType"), null)));
 
     target = JsonUtils.getJsonNodeFactory().objectNode();
     List<PatchOperation> d2 = JsonUtils.diff(source, target, true);
