@@ -34,7 +34,7 @@
     <url>https://github.com/pingidentity/scim2</url>
     <scm>
       <url>https://github.com/zgsolucoes/scim2</url>
-      <connection>scm:git:https://github.com/zgsolucoes/scim2</connection>
+      <connection>scm:git:https://github.com/zgsolucoes/scim2.git</connection>
       <tag>2.5.0-ZG</tag>
     </scm>
     <organization>
@@ -70,6 +70,19 @@
       <build.version>${project.version}</build.version>
       <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <name>Releases</name>
+      <url>https://repo.zeroglosa.com.br/nexus/content/repositories/libs-release-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Snapshot</name>
+      <url>https://repo.zeroglosa.com.br/nexus/content/repositories/libs-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
     <plugins>
