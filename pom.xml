@@ -33,7 +33,6 @@
     <url>https://github.com/zgsolucoes/scim2</url>
     <connection>scm:git:https://github.com/zgsolucoes/scim2.git</connection>
     <developerConnection>scm:git:git@github.com:zgsolucoes/scim2.git</developerConnection>
-    <tag>2.5.0-ZG</tag>
   </scm>
   <organization>
     <name>Ping Identity Corporation</name>
