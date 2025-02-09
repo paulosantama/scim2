@@ -14,14 +14,11 @@
 ~ You should have received a copy of the GNU General Public License
 ~ along with this program; if not, see <http://www.gnu.org/licenses>.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.unboundid.product.scim2</groupId>
   <artifactId>scim2-parent</artifactId>
-  <version>2.5.0-ZG-SNAPSHOT</version>
+  <version>2.5.0-ZG</version>
   <packaging>pom</packaging>
   <name>UnboundID SCIM2 SDK Parent</name>
   <description>
@@ -35,6 +32,7 @@
   <scm>
     <url>https://github.com/pingidentity/scim2</url>
     <connection>scm:git:https://github.com/pingidentity/scim2</connection>
+    <tag>2.5.0-ZG</tag>
   </scm>
   <organization>
     <name>Ping Identity Corporation</name>
