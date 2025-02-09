@@ -30,8 +30,8 @@
   <inceptionYear>2015</inceptionYear>
   <url>https://github.com/pingidentity/scim2</url>
   <scm>
-    <url>https://github.com/pingidentity/scim2</url>
-    <connection>scm:git:https://github.com/pingidentity/scim2</connection>
+    <url>https://github.com/zgsolucoes/scim2</url>
+    <connection>scm:git:https://github.com/zgsolucoes/scim2</connection>
     <tag>2.5.0-ZG</tag>
   </scm>
   <organization>
